@@ -31,4 +31,4 @@ USER    mosquitto
 
 EXPOSE 1883
 
-CMD ["/usr/local/sbin/mosquitto -c mosquitto.conf"]
+CMD ["/usr/local/sbin/mosquitto"]
