@@ -22,8 +22,9 @@ WORKDIR /usr/local/src/mosquitto-1.6.10
 RUN     make && make install
 RUN     ldconfig 
 
-RUN     echo "listener 1883 0.0.0.0" >> /usr/local/src/mosquitto-1.6.10/mosquitto.conf
-RUN     echo "allow_anonymous true" >> /usr/local/src/mosquitto-1.6.10/mosquitto.conf
+RUN     touch /etc/mosquitto/mosquitto.conf
+RUN     echo "listener 1883 0.0.0.0" >> /etc/mosquitto/mosquitto.conf
+RUN     echo "allow_anonymous true" >> /etc/mosquitto/mosquitto.conf
 
 RUN     adduser --system --disabled-password --disabled-login mosquitto
 USER    mosquitto
