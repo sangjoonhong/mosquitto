@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 ARG  MOSQUITTOVERSION
-ENV  MOSQUITTOVERSION 1.6.10
+ENV  MOSQUITTOVERSION 2.0.11
 
 MAINTAINER Ansgar Schmidt <ansgar.schmidt@gmx.net>
 
@@ -15,10 +15,10 @@ RUN apt-get update     && \
 RUN     mkdir -p /usr/local/src
 WORKDIR /usr/local/src
 RUN     pwd
-RUN     wget http://mosquitto.org/files/source/mosquitto-1.6.10.tar.gz
+RUN     wget http://mosquitto.org/files/source/mosquitto-2.0.11.tar.gz
 RUN     ls
-RUN     tar xvzf ./mosquitto-1.6.10.tar.gz
-WORKDIR /usr/local/src/mosquitto-1.6.10
+RUN     tar xvzf ./mosquitto-2.0.11.tar.gz
+WORKDIR /usr/local/src/mosquitto-2.0.11
 RUN     make && make install
 RUN     ldconfig 
 
