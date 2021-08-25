@@ -11,13 +11,20 @@ RUN apt-get update     && \
     apt-get upgrade -y && \
     apt-get install -y wget build-essential libwrap0-dev libssl-dev python-distutils-extra \
                        libc-ares-dev uuid-dev
-#RUN apt-get install mosquitto -y
+
+RUN apt-get install -y zip
+
 RUN     mkdir -p /usr/local/src
 WORKDIR /usr/local/src
-RUN     pwd
+
+RUN     wget https://github.com/DaveGamble/cJSON/archive/refs/heads/master.zip
+RUN     unzip cJason-master.zip
+WORKDIR /usr/local/src/cJason-master
+RUN     make && make install
+
 RUN     wget http://mosquitto.org/files/source/mosquitto-2.0.11.tar.gz
-RUN     ls
 RUN     tar xvzf ./mosquitto-2.0.11.tar.gz
+
 WORKDIR /usr/local/src/mosquitto-2.0.11
 RUN     make && make install
 RUN     ldconfig 
