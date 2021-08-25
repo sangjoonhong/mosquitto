@@ -11,7 +11,7 @@ RUN apt-get update     && \
     apt-get upgrade -y && \
     apt-get install -y wget build-essential libwrap0-dev libssl-dev python-distutils-extra \
                        libc-ares-dev uuid-dev
-
+RUN apt-get -y install cmake 
 RUN apt-get install -y zip
 
 RUN     mkdir -p /usr/local/src
@@ -19,11 +19,7 @@ WORKDIR /usr/local/src
 
 RUN     wget https://github.com/DaveGamble/cJSON/archive/refs/heads/master.zip
 RUN     unzip ./master.zip
-RUN     pwd
-RUN     ls
-WORKDIR /usr/local/src/master
-RUN     pwd
-RUN     ls
+WORKDIR /usr/local/src/cJSON-master
 RUN     cmake .
 RUN     make && make install
 
