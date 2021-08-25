@@ -40,4 +40,4 @@ USER    mosquitto
 
 EXPOSE  1883
 
-CMD     /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+CMD     /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf -v
