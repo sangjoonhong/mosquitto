@@ -18,7 +18,7 @@ RUN     mkdir -p /usr/local/src
 WORKDIR /usr/local/src
 
 RUN     wget https://github.com/DaveGamble/cJSON/archive/refs/heads/master.zip
-RUN     unzip cJason-master.zip
+RUN     unzip ./cJason-master.zip
 WORKDIR /usr/local/src/cJason-master
 RUN     make && make install
 
