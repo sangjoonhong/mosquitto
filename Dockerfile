@@ -20,7 +20,10 @@ WORKDIR /usr/local/src
 RUN     wget https://github.com/DaveGamble/cJSON/archive/refs/heads/master.zip
 RUN     unzip ./master.zip
 RUN     pwd
+RUN     ls
 WORKDIR /usr/local/src/master
+RUN     pwd
+RUN     ls
 RUN     make && make install
 
 RUN     wget http://mosquitto.org/files/source/mosquitto-2.0.11.tar.gz
