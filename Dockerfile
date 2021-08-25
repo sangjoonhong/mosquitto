@@ -24,6 +24,7 @@ RUN     ls
 WORKDIR /usr/local/src/master
 RUN     pwd
 RUN     ls
+RUN     cmake .
 RUN     make && make install
 
 RUN     wget http://mosquitto.org/files/source/mosquitto-2.0.11.tar.gz
