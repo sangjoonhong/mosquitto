@@ -23,6 +23,7 @@ WORKDIR /usr/local/src/cJSON-master
 RUN     cmake .
 RUN     make && make install
 
+WORKDIR /usr/local/src
 RUN     wget http://mosquitto.org/files/source/mosquitto-2.0.11.tar.gz
 RUN     tar xvzf ./mosquitto-2.0.11.tar.gz
 
