@@ -29,6 +29,6 @@ RUN     echo "allow_anonymous true" >> /etc/mosquitto/mosquitto.conf
 RUN     adduser --system --disabled-password --disabled-login mosquitto
 USER    mosquitto
 
-EXPOSE 1883
+EXPOSE  1883
 
-CMD ["/usr/local/sbin/mosquitto"]
+CMD     /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
