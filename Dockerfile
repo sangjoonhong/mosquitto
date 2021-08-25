@@ -18,14 +18,14 @@ RUN apt-get install mosquitto -y
 #RUN     tar xvzf ./mosquitto-1.6.10.tar.gz
 #WORKDIR /usr/local/src/mosquitto-1.6.10
 #RUN     make && make install
-RUN     ldconfig 
+#RUN     ldconfig 
 
 #RUN     echo "listener 1883 0.0.0.0" >> /usr/local/src/mosquitto-1.6.10/mosquitto.conf
 #RUN     echo "allow_anonymous true" >> /usr/local/src/mosquitto-1.6.10/mosquitto.conf
 
-RUN     adduser --system --disabled-password --disabled-login mosquitto
-USER    mosquitto
+#RUN     adduser --system --disabled-password --disabled-login mosquitto
+#USER    mosquitto
 
-EXPOSE 1883
+#EXPOSE 1883
 
-CMD ["/usr/local/sbin/mosquitto"]
+#CMD ["/usr/local/sbin/mosquitto"]
