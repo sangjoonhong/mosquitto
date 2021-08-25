@@ -28,4 +28,4 @@ RUN apt-get install mosquitto -y
 
 #EXPOSE 1883
 
-#CMD ["/usr/local/sbin/mosquitto"]
+CMD ["/usr/local/sbin/mosquitto"]
