@@ -13,8 +13,11 @@ RUN apt-get update     && \
                        libc-ares-dev uuid-dev
 #RUN apt-get install mosquitto -y
 RUN     mkdir -p /usr/local/src
-WORKDIR          /usr/local/src
+RUN     pwd
+RUN     cd /usr/local/src
+RUN     pwd
 RUN     wget http://mosquitto.org/files/source/mosquitto-1.6.10.tar.gz
+RUN     ls
 RUN     tar xvzf ./mosquitto-1.tar.gz
 WORKDIR /usr/local/src/mosquitto-1.6.10
 RUN     make && make install
